@@ -1,0 +1,123 @@
+<ion-header color="dark">
+  <ion-toolbar color="dark">
+    <img class="header-icon" src="../assets/logo/logo-light.svg" name="logo-light" />
+    <ion-icon name="person-circle-outline" slot="end" class="header-icon" size="large" (click)="presentPopover()">
+    </ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <div *ngFor="let video of actionVideos$ | async">
+  <p>{{video | json}}</p>
+</div> -->
+
+<div id="vimeo-player" class="video-container"></div>
+<!-- <iframe
+  src="https://player.vimeo.com/video/388618600?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=165020"
+  width="375"
+  height="800"
+  frameborder="0"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+  ></iframe> -->
+
+<ion-content *ngIf="auth.user$ | async as user">
+  <div *ngIf="user.subscription === ('free')">
+    <h4>Featured Videos</h4>
+    <ion-slides class="custom-bullets" pager="true" [options]="slideOptsFeatured">
+      <ion-slide (click)="openVideo(video.uri)" *ngFor="let video of featuredFreeVideos$ | async">
+        <img src="{{video.pictures.sizes[4].link}}" class="video__thumbnail" />
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <div *ngIf="user.subscription === ('premium' || 'vip')">
+    <div>
+      <h4>Featured Videos</h4>
+      <ion-slides class="custom-bullets" pager="true" [options]="slideOptsFeatured">
+        <ion-slide (click)="openVideo(video.uri)" *ngFor="let video of featuredPremiumVideos$ | async">
+          <img src="{{video.pictures.sizes[4].link}}" class="video__thumbnail" />
+          <!-- <div class="video" [innerHTML]="video.embed.html | sanitizeHtml"></div> -->
+        </ion-slide>
+      </ion-slides>
+    </div>
+
+    <div>
+      <h4>Action</h4>
+      <ion-slides scrollbar="true" #sliderEl [options]="slideOpts">
+        <ion-slide (click)="openVideo(video.uri)" *ngFor="let video of actionVideos$ | async">
+          <div class="video">
+            <img src="{{video.pictures.sizes[4].link}}" class="video__thumbnail" />
+            <p class="video__title">{{ video.name }}</p>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div>
+      <h4>Kids</h4>
+      <ion-slides scrollbar="true" #sliderEl [options]="slideOpts">
+        <ion-slide (click)="openVideo(video.uri)" *ngFor="let video of kidsVideos$ | async">
+          <div class="video">
+            <img src="{{video.pictures.sizes[4].link}}" class="video__thumbnail" />
+            <p class="video__title">{{ video.name }}</p>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div>
+      <h4>Comedy</h4>
+      <ion-slides scrollbar="true" #sliderEl [options]="slideOpts">
+        <ion-slide (click)="openVideo(video.uri)" *ngFor="let video of comedyVideos$ | async">
+          <div class="video">
+            <img src="{{video.pictures.sizes[4].link}}" class="video__thumbnail" />
+            <p class="video__title">{{ video.name }}</p>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div>
+      <h4>Documentary</h4>
+      <ion-slides scrollbar="true" #sliderEl [options]="slideOpts">
+        <ion-slide (click)="openVideo(video.uri)" *ngFor="let video of documentaryVideos$ | async">
+          <div class="video">
+            <img src="{{video.pictures.sizes[4].link}}" class="video__thumbnail" />
+            <p class="video__title">{{ video.name }}</p>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div>
+      <h4>Talk Shows</h4>
+      <ion-slides scrollbar="true" #sliderEl [options]="slideOpts">
+        <ion-slide (click)="openVideo(video.uri)" *ngFor="let video of talkShowVideos$ | async">
+          <div class="video">
+            <img src="{{video.pictures.sizes[4].link}}" class="video__thumbnail" />
+            <p class="video__title">{{ video.name }}</p>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div>
+      <h4>News</h4>
+      <ion-slides scrollbar="true" #sliderEl [options]="slideOpts">
+        <ion-slide (click)="openVideo(video.uri)" *ngFor="let video of newsVideos$ | async">
+          <div class="video">
+            <img src="{{video.pictures.sizes[4].link}}" class="video__thumbnail" />
+            <p class="video__title">{{ video.name }}</p>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
+
+  <div>
+    <h4>Islamic</h4>
+    <ion-slides scrollbar="true" #sliderEl [options]="slideOpts">
+      <ion-slide (click)="openVideo(video.uri)" *ngFor="let video of islamicVideos$ | async">
+        <div class="video">
+          <img src="{{video.pictures.sizes[4].link}}" class="video__thumbnail" />
+          <p class="video__title">{{ video.name }}</p>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>

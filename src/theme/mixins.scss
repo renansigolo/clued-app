@@ -1,0 +1,5 @@
+@mixin bg-img($backgroundPath) {
+  --background: none;
+  background: url($backgroundPath) no-repeat 0 0;
+  background-size: cover;
+}

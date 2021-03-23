@@ -1,0 +1,20 @@
+ion-content,
+ion-card,
+ion-item {
+  --background: var(--ion-color-dark);
+  --color: var(--ion-color-light);
+}
+
+ion-card-title,
+ion-card-subtitle,
+ion-list-header {
+  --color: var(--ion-color-light);
+}
+
+p {
+  color: var(--ion-color-light);
+}
+
+ion-card {
+  border: 1px solid var(--ion-color-light);
+}

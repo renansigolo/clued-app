@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "cluedtv-76443",
+    "production": "cluedtv-prod"
+  }
+}

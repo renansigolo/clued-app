@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start" class="button-icon">
+      <ion-back-button text="" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Manage Subscription</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-list lines="none" class="ion-margin" *ngIf="user">
+    <div class="ion-margin-bottom" *ngIf="user.stripeTokenId">
+      <ion-list-header>
+        <ion-label>Payment Method</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-icon name="card" slot="start"></ion-icon>
+        <ion-label class="ion-text-wrap">
+          <p>•••• •••• •••• ••••</p>
+        </ion-label>
+        <!-- <ion-label slot="end" class="ion-text-end">
+          <p (click)="changePayment()">Change Payment</p>
+        </ion-label> -->
+      </ion-item>
+    </div>
+
+    <ion-radio-group>
+      <ion-list-header>
+        <ion-label>Subscription Plans</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label class="ion-text-wrap">
+          <p>
+            To change your package simply select the desired package from the
+            options below.
+          </p>
+        </ion-label>
+      </ion-item>
+
+      <ion-card
+        *ngFor="let plan of plans$ | async"
+        (click)="confirmAction('upgrade', plan)"
+        [ngStyle]="{'border': plan.title === user.subscription ? '1px solid green' : '1px solid var(--ion-color-light)'}"
+      >
+        <ion-card-header>
+          <ion-row>
+            <div>
+              <ion-card-subtitle>
+                {{!plan.price ? 'FREE' : '$' + plan.price}}
+              </ion-card-subtitle>
+              <ion-card-title>{{ plan.title | uppercase }}</ion-card-title>
+            </div>
+          </ion-row>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item *ngFor="let feature of plan.features">
+              {{feature }}
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-item>
+        <ion-radio slot="start" value="biff" checked></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+
+    <div class="ion-margin-bottom" *ngIf="subscription">
+      <ion-list-header>
+        <ion-label>Cancellation</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-button
+          fill="outline"
+          color="light"
+          size="medium"
+          (click)="confirmAction('cancel', $event)"
+        >
+          Cancel Subscription
+        </ion-button>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>

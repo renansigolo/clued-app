@@ -1,0 +1,71 @@
+<ion-content scrollY="false">
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col>
+        <ion-img
+          class="welcome-logo"
+          src="../assets/logo/logo-clued.svg"
+          alt="logo"
+        ></ion-img>
+
+        <ion-row class="ion-justify-content-center">
+          <ion-col>
+            <ion-text color="light">
+              <h1>Welcome to CluedTV</h1>
+            </ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-text color="medium">
+              <h4 class="ion-text-uppercase">Let's get started</h4>
+            </ion-text>
+          </ion-col>
+        </ion-row>
+
+        <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+          <ion-input
+            type="email"
+            placeholder="Email"
+            formControlName="email"
+          ></ion-input>
+
+          <ion-input
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+          ></ion-input>
+
+          <ion-row class="ion-justify-content-between">
+            <ion-button
+              fill="outline"
+              shape="round"
+              color="light"
+              strong="true"
+              routerLink="/welcome"
+              routerDirection="back"
+            >
+              Cancel
+            </ion-button>
+
+            <ion-button
+              type="submit"
+              [disabled]="!loginForm.valid"
+              fill="solid"
+              shape="round"
+              color="success"
+              strong="true"
+            >
+              Login
+            </ion-button>
+          </ion-row>
+        </form>
+
+        <ion-row class="ion-justify-content-center">
+          <a (click)="sendPasswordReset()">Forgot my password</a>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

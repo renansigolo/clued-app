@@ -1,0 +1,32 @@
+@import '../../theme/mixins.scss';
+
+ion-content {
+  @include bg-img('../../assets/backgrounds/bg-home.png');
+
+  ion-grid {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+  }
+
+  ion-text,
+  img {
+    text-align: center;
+  }
+
+  h4 {
+    margin: 0 0 20px 0;
+    font-size: 1em;
+    letter-spacing: 1px;
+  }
+
+  ion-button {
+    margin-top: 45px;
+  }
+}
+
+.welcome-logo {
+  height: 15vh;
+  width: auto;
+  margin-bottom: 55px;
+}

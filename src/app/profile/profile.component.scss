@@ -1,0 +1,44 @@
+ion-avatar {
+  width: fit-content;
+  height: auto;
+  padding-left: 12px;
+}
+
+h4 {
+  font-size: 12px;
+  padding-left: 13px;
+}
+
+h1 {
+  margin-top: 0;
+  color: var(--ion-color-light);
+  padding-left: 12px;
+}
+
+.profile-initials {
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 3vh;
+  background: rgb(45, 236, 62);
+  background: linear-gradient(
+    155deg,
+    rgba(45, 236, 62, 1) 0%,
+    rgba(236, 43, 95, 1) 100%
+  );
+}
+
+.profile-menu-list {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+ion-item {
+  font-weight: 700;
+  font-size: 14px;
+  --color: var(--ion-color-light);
+  --background: var(--ion-color-dark);
+  --border-color: var(--ion-color-medium);
+  --background-activated: var(--ion-color-dark-shade);
+  --background-hover: var(--ion-color-dark);
+}

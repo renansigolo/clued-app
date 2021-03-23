@@ -1,0 +1,27 @@
+@import '../../theme/mixins.scss';
+
+ion-content {
+  @include bg-img('../../assets/backgrounds/bg-success.png');
+
+  ion-grid {
+    height: 100%;
+  }
+
+  ion-row {
+    height: 100%;
+    flex-direction: row;
+  }
+
+  ion-col {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+}

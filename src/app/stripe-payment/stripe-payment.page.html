@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" class="button-icon" *ngIf="isSignup">
+      <ion-back-button text="" defaultHref="/plans"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end" class="button-icon" *ngIf="!isSignup">
+      <ion-button text="" (click)="closeModal()">
+        <ion-icon name="close" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scrollY="false">
+  <div class="ion-justify-content-center div-flex">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center ion-padding-horizontal">
+        <ion-col>
+          <ion-img
+            class="position-logo-dark"
+            src="../assets/logo/logo-dark.svg"
+            alt="logo"
+          ></ion-img>
+          <h1>Credit Card</h1>
+          <p>
+            Enter your credit card details below for your recurring monthly
+            payments.
+          </p>
+
+          <form (submit)="handleForm($event)">
+            <div #cardElement>
+              <!-- a Stripe Element will be inserted here. -->
+            </div>
+            <!-- Used to display Element errors -->
+            <p>{{ cardErrors }}</p>
+
+            <ion-button type="submit" color="success" expand="full">
+              Subscribe for ${{ amount || '10'}}.00
+            </ion-button>
+          </form>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

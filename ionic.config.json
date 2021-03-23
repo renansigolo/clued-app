@@ -1,0 +1,7 @@
+{
+  "name": "clued-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

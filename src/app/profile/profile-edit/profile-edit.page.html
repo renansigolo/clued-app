@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start" class="button-icon">
+      <ion-back-button text="" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Personal Details</h2>
+  <form [formGroup]="detailsForm" (ngSubmit)="submitDetails()">
+    <ion-list>
+      <ion-label>Email</ion-label>
+      <ion-input
+        type="email"
+        placeholder="Enter your email"
+        formControlName="email"
+      ></ion-input>
+      <br />
+      <ion-label>Password</ion-label>
+      <ion-input
+        type="password"
+        placeholder="Enter your password"
+        formControlName="password"
+      ></ion-input>
+    </ion-list>
+  </form>
+
+  <h2>Security</h2>
+  <ion-list lines="none">
+    <ion-item (click)="resetPassword()" color="dark">
+      <ion-icon name="key" slot="start"></ion-icon>
+      <ion-label>Reset Password</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <h2>Preferences</h2>
+  <ion-item lines="none" color="dark" *ngIf="user">
+    <ion-checkbox
+      [checked]="user.newsletter"
+      class="newsletter-checkbox-icon"
+      (ionChange)="updateNewsletter()"
+    ></ion-checkbox>
+    <ion-label class="ion-text-wrap">
+      I want to receive newsletter and special viewing offers from CluedTV.
+    </ion-label>
+  </ion-item>
+</ion-content>

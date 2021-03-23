@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" class="button-icon">
+      <ion-back-button text="" defaultHref="/welcome"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scrollY="false">
+  <div class="ion-justify-content-center">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center ion-padding-horizontal">
+        <ion-col>
+          <ion-img
+            class="position-logo-dark"
+            src="../assets/logo/logo-dark.svg"
+            alt="logo"
+          ></ion-img>
+
+          <h1>Create your account</h1>
+          <p>
+            Have the freedom to upgrade or downgrade your account at any time.
+          </p>
+
+          <form [formGroup]="signupForm" (ngSubmit)="submitSignUp()">
+            <ion-list>
+              <ion-input
+                type="text"
+                placeholder="First Name"
+                formControlName="firstName"
+              ></ion-input>
+
+              <ion-input
+                type="text"
+                placeholder="Last Name"
+                formControlName="lastName"
+              ></ion-input>
+
+              <ion-input
+                type="email"
+                placeholder="Email"
+                formControlName="email"
+              ></ion-input>
+
+              <ion-input
+                type="password"
+                placeholder="Password"
+                formControlName="password"
+              ></ion-input>
+            </ion-list>
+
+            <ion-item lines="none">
+              <ion-checkbox
+                formControlName="newsletter"
+                checked="false"
+                class="newsletter-checkbox-icon"
+                color="light"
+              ></ion-checkbox>
+
+              <ion-label class="ion-text-wrap">
+                I want to receive newsletter and special viewing offers from
+                CluedTV.
+              </ion-label>
+            </ion-item>
+
+            <ion-button
+              type="submit"
+              [disabled]="!signupForm.valid"
+              fill="solid"
+              shape="round"
+              color="success"
+              expand="full"
+              strong="true"
+            >
+              Sign-up
+            </ion-button>
+          </form>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

@@ -1,0 +1,72 @@
+<ion-content>
+  <div class="ion-justify-content-center">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center ion-padding-horizontal">
+        <ion-col>
+          <ion-img
+            class="position-logo-dark"
+            src="../assets/logo/logo-dark.svg"
+            alt="logo"
+          ></ion-img>
+          <section>
+            <ion-text>
+              <h1>Choose a plan that's right for you</h1>
+            </ion-text>
+            <ion-text>
+              <p>Downgrade or upgrade at any time.</p>
+            </ion-text>
+            <ion-card
+              class="plans-card"
+              *ngFor="let plan of plans$ | async"
+              [ngClass]="{'card-selected':activePlan === plan.title}"
+              (click)="selectPlan(plan.title)"
+            >
+              <ion-card-content class="ion-no-padding">
+                <ion-grid>
+                  <ion-row>
+                    <ion-col size="3">
+                      <p class="text-plans-options">
+                        {{ plan.title | titlecase }}
+                      </p>
+                      <p class="text-price-options">
+                        ${{ plan.price }}
+                      </p>
+                    </ion-col>
+                    <ion-col size="9">
+                      <ion-list>
+                        <ion-item
+                          lines="none"
+                          *ngFor="let feature of plan.features"
+                        >
+                          <ion-icon
+                            src="../assets/icon/icon-check.svg"
+                            slot="start"
+                          ></ion-icon>
+                          <ion-label class="ion-text-wrap">
+                            {{ feature }}
+                          </ion-label>
+                        </ion-item>
+                      </ion-list>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+            </ion-card>
+          </section>
+          <ion-button
+            type="button"
+            fill="solid"
+            shape="round"
+            color="success"
+            strong="true"
+            expand="full"
+            (click)="routeSelection()"
+            [disabled]="!activePlan"
+          >
+            Next
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

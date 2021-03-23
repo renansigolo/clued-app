@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start" class="button-icon">
+      <ion-back-button text="" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Manage Devices</ion-title>
+  </ion-toolbar>
+  <!-- Default title -->
+  <ion-toolbar color="dark">
+    <ion-title size="small">You can have up to 3 devices registered</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list-header>Your Devices</ion-list-header>
+  <ion-list>
+    <ion-item *ngFor="let device of devices">
+      <ion-label>
+        <h2>{{ device.model }}</h2>
+        <p>{{ device.serial }}</p>
+      </ion-label>
+      <ion-note slot="end" color="primary">Current</ion-note>
+      <ion-note
+        slot="end"
+        color="warning"
+        (click)="confirmDelete(device.model)"
+      >
+        Deregister
+      </ion-note>
+    </ion-item>
+
+    <!-- Mocked List of Text Items -->
+    <ion-item>
+      <ion-label>
+        <h2>iPhone X</h2>
+        <p>UID67283JASIU836</p>
+      </ion-label>
+      <ion-note slot="end" color="primary">Current</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h2>iPad Pro</h2>
+        <p>UID67283JASIU836</p>
+      </ion-label>
+      <ion-note slot="end" color="danger" (click)="confirmDelete('iPhone X')">
+        Deregister
+      </ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h2>Android Pixel 4</h2>
+        <p>UID67283JASIU836</p>
+      </ion-label>
+      <ion-note slot="end" color="danger" (click)="confirmDelete('iPhone X')">
+        Deregister
+      </ion-note>
+    </ion-item>
+  </ion-list>
+</ion-content>
