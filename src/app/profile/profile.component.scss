@@ -20,12 +20,7 @@ h1 {
   font-weight: bold;
   border-radius: 50%;
   padding: 3vh;
-  background: rgb(45, 236, 62);
-  background: linear-gradient(
-    155deg,
-    rgba(45, 236, 62, 1) 0%,
-    rgba(236, 43, 95, 1) 100%
-  );
+  background: var(--ion-color-primary);
 }
 
 .profile-menu-list {

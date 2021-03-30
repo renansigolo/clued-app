@@ -2,19 +2,19 @@
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-color-primary: #3880ff;
-  --ion-color-primary-rgb: 56, 128, 255;
-  --ion-color-primary-contrast: #ffffff;
-  --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #3171e0;
-  --ion-color-primary-tint: #4c8dff;
+  --ion-color-primary: #fccc27;
+  --ion-color-primary-rgb: 252,204,39;
+  --ion-color-primary-contrast: #000000;
+  --ion-color-primary-contrast-rgb: 0,0,0;
+  --ion-color-primary-shade: #deb422;
+  --ion-color-primary-tint: #fcd13d;
   /** secondary **/
-  --ion-color-secondary: #0cd1e8;
-  --ion-color-secondary-rgb: 12, 209, 232;
+  --ion-color-secondary: #03152F;
+  --ion-color-secondary-rgb: 3,21,47;
   --ion-color-secondary-contrast: #ffffff;
-  --ion-color-secondary-contrast-rgb: 255, 255, 255;
-  --ion-color-secondary-shade: #0bb8cc;
-  --ion-color-secondary-tint: #24d6ea;
+  --ion-color-secondary-contrast-rgb: 255,255,255;
+  --ion-color-secondary-shade: #031229;
+  --ion-color-secondary-tint: #1c2c44;
   /** tertiary **/
   --ion-color-tertiary: #7044ff;
   --ion-color-tertiary-rgb: 112, 68, 255;
@@ -64,6 +64,13 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #e0e0e0;
   --ion-color-light-tint: #ffffff;
+  /** dark **/
+  --ion-color-dark: #000614;
+  --ion-color-dark-rgb: 0,6,20;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255,255,255;
+  --ion-color-dark-shade: #000512;
+  --ion-color-dark-tint: #1a1f2c;
   /* Set the font family of the entire app */
   --ion-font-family: 'Quicksand', -apple-system, BlinkMacSystemFont,
     'Helvetica Neue', 'Roboto', sans-serif;
