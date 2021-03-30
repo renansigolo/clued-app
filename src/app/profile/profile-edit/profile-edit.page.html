@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="dark">
+  <ion-toolbar color="secondary">
     <ion-buttons slot="start" class="button-icon">
       <ion-back-button text="" defaultHref="/home"></ion-back-button>
     </ion-buttons>
@@ -29,14 +29,14 @@
 
   <h2>Security</h2>
   <ion-list lines="none">
-    <ion-item (click)="resetPassword()" color="dark">
+    <ion-item (click)="resetPassword()" color="secondary">
       <ion-icon name="key" slot="start"></ion-icon>
       <ion-label>Reset Password</ion-label>
     </ion-item>
   </ion-list>
 
   <h2>Preferences</h2>
-  <ion-item lines="none" color="dark" *ngIf="user">
+  <ion-item lines="none" color="secondary" *ngIf="user">
     <ion-checkbox
       [checked]="user.newsletter"
       class="newsletter-checkbox-icon"

@@ -37,7 +37,7 @@ ion-content {
 }
 
 .card-selected {
-  border: 4px solid var(--ion-color-success);
+  border: 4px solid var(--ion-color-primary);
 }
 
 .text-plans-options {
@@ -52,4 +52,8 @@ ion-content {
 
 .text-payment-frequency {
   font-size: 0.75em;
+}
+
+ion-icon {
+  color: var(--ion-color-primary);
 }

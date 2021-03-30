@@ -16,12 +16,12 @@
   --ion-color-secondary-shade: #031229;
   --ion-color-secondary-tint: #1c2c44;
   /** tertiary **/
-  --ion-color-tertiary: #7044ff;
-  --ion-color-tertiary-rgb: 112, 68, 255;
+  --ion-color-tertiary: #000614;
+  --ion-color-tertiary-rgb: 0,6,20;
   --ion-color-tertiary-contrast: #ffffff;
-  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
-  --ion-color-tertiary-shade: #633ce0;
-  --ion-color-tertiary-tint: #7e57ff;
+  --ion-color-tertiary-contrast-rgb: 255,255,255;
+  --ion-color-tertiary-shade: #000512;
+  --ion-color-tertiary-tint: #1a1f2c;
   /** success **/
   --ion-color-success: #2dec3e;
   --ion-color-success-rgb: 45, 236, 62;
@@ -64,13 +64,6 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #e0e0e0;
   --ion-color-light-tint: #ffffff;
-  /** dark **/
-  --ion-color-dark: #000614;
-  --ion-color-dark-rgb: 0,6,20;
-  --ion-color-dark-contrast: #ffffff;
-  --ion-color-dark-contrast-rgb: 255,255,255;
-  --ion-color-dark-shade: #000512;
-  --ion-color-dark-tint: #1a1f2c;
   /* Set the font family of the entire app */
   --ion-font-family: 'Quicksand', -apple-system, BlinkMacSystemFont,
     'Helvetica Neue', 'Roboto', sans-serif;
