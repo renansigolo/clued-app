@@ -17,8 +17,8 @@
       <ion-row class="ion-justify-content-center ion-padding-horizontal">
         <ion-col>
           <ion-img
-            class="position-logo-dark"
-            src="../assets/logo/logo-dark.svg"
+            class="position-logo-clued"
+            src="../assets/logo/logo-clued.svg"
             alt="logo"
           ></ion-img>
           <h1>Credit Card</h1>
@@ -34,12 +34,14 @@
             <!-- Used to display Element errors -->
             <p>{{ cardErrors }}</p>
 
-            <ion-button type="submit"
-            fill="solid"
-            shape="round"
-            color="primary"
-            expand="full"
-            strong="true">
+            <ion-button
+              type="submit"
+              fill="solid"
+              shape="round"
+              color="primary"
+              expand="full"
+              strong="true"
+            >
               Subscribe for ${{ amount || '10'}}.00
             </ion-button>
           </form>

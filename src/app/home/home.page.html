@@ -1,8 +1,13 @@
 <ion-header color="secondary">
   <ion-toolbar color="secondary">
     <img class="header-icon" src="../assets/logo/logo-clued.svg" name="logo" />
-    <ion-icon name="person-circle-outline" slot="end" class="header-icon" size="large" (click)="presentPopover()">
-    </ion-icon>
+    <ion-icon
+      name="person-circle-outline"
+      slot="end"
+      class="header-icon"
+      size="large"
+      (click)="presentPopover()"
+    ></ion-icon>
   </ion-toolbar>
 </ion-header>
 
@@ -23,8 +28,15 @@
 <ion-content *ngIf="auth.user$ | async as user">
   <div *ngIf="user.subscription === ('free')">
     <h4>Featured Videos</h4>
-    <ion-slides class="custom-bullets" pager="true" [options]="slideOptsFeatured">
-      <ion-slide (click)="openVideo(video.uri)" *ngFor="let video of featuredFreeVideos$ | async">
+    <ion-slides
+      class="custom-bullets"
+      pager="true"
+      [options]="slideOptsFeatured"
+    >
+      <ion-slide
+        (click)="openVideo(video.uri)"
+        *ngFor="let video of featuredFreeVideos$ | async"
+      >
         <img src="{{video.pictures.sizes[4].link}}" class="video__thumbnail" />
       </ion-slide>
     </ion-slides>
@@ -33,9 +45,19 @@
   <div *ngIf="user.subscription === ('premium' || 'vip')">
     <div>
       <h4>Featured Videos</h4>
-      <ion-slides class="custom-bullets" pager="true" [options]="slideOptsFeatured">
-        <ion-slide (click)="openVideo(video.uri)" *ngFor="let video of featuredPremiumVideos$ | async">
-          <img src="{{video.pictures.sizes[4].link}}" class="video__thumbnail" />
+      <ion-slides
+        class="custom-bullets"
+        pager="true"
+        [options]="slideOptsFeatured"
+      >
+        <ion-slide
+          (click)="openVideo(video.uri)"
+          *ngFor="let video of featuredPremiumVideos$ | async"
+        >
+          <img
+            src="{{video.pictures.sizes[4].link}}"
+            class="video__thumbnail"
+          />
           <!-- <div class="video" [innerHTML]="video.embed.html | sanitizeHtml"></div> -->
         </ion-slide>
       </ion-slides>
@@ -44,9 +66,15 @@
     <div>
       <h4>Action</h4>
       <ion-slides scrollbar="true" #sliderEl [options]="slideOpts">
-        <ion-slide (click)="openVideo(video.uri)" *ngFor="let video of actionVideos$ | async">
+        <ion-slide
+          (click)="openVideo(video.uri)"
+          *ngFor="let video of actionVideos$ | async"
+        >
           <div class="video">
-            <img src="{{video.pictures.sizes[4].link}}" class="video__thumbnail" />
+            <img
+              src="{{video.pictures.sizes[4].link}}"
+              class="video__thumbnail"
+            />
             <p class="video__title">{{ video.name }}</p>
           </div>
         </ion-slide>
@@ -55,9 +83,15 @@
     <div>
       <h4>Kids</h4>
       <ion-slides scrollbar="true" #sliderEl [options]="slideOpts">
-        <ion-slide (click)="openVideo(video.uri)" *ngFor="let video of kidsVideos$ | async">
+        <ion-slide
+          (click)="openVideo(video.uri)"
+          *ngFor="let video of kidsVideos$ | async"
+        >
           <div class="video">
-            <img src="{{video.pictures.sizes[4].link}}" class="video__thumbnail" />
+            <img
+              src="{{video.pictures.sizes[4].link}}"
+              class="video__thumbnail"
+            />
             <p class="video__title">{{ video.name }}</p>
           </div>
         </ion-slide>
@@ -66,9 +100,15 @@
     <div>
       <h4>Comedy</h4>
       <ion-slides scrollbar="true" #sliderEl [options]="slideOpts">
-        <ion-slide (click)="openVideo(video.uri)" *ngFor="let video of comedyVideos$ | async">
+        <ion-slide
+          (click)="openVideo(video.uri)"
+          *ngFor="let video of comedyVideos$ | async"
+        >
           <div class="video">
-            <img src="{{video.pictures.sizes[4].link}}" class="video__thumbnail" />
+            <img
+              src="{{video.pictures.sizes[4].link}}"
+              class="video__thumbnail"
+            />
             <p class="video__title">{{ video.name }}</p>
           </div>
         </ion-slide>
@@ -77,9 +117,15 @@
     <div>
       <h4>Documentary</h4>
       <ion-slides scrollbar="true" #sliderEl [options]="slideOpts">
-        <ion-slide (click)="openVideo(video.uri)" *ngFor="let video of documentaryVideos$ | async">
+        <ion-slide
+          (click)="openVideo(video.uri)"
+          *ngFor="let video of documentaryVideos$ | async"
+        >
           <div class="video">
-            <img src="{{video.pictures.sizes[4].link}}" class="video__thumbnail" />
+            <img
+              src="{{video.pictures.sizes[4].link}}"
+              class="video__thumbnail"
+            />
             <p class="video__title">{{ video.name }}</p>
           </div>
         </ion-slide>
@@ -88,9 +134,15 @@
     <div>
       <h4>Talk Shows</h4>
       <ion-slides scrollbar="true" #sliderEl [options]="slideOpts">
-        <ion-slide (click)="openVideo(video.uri)" *ngFor="let video of talkShowVideos$ | async">
+        <ion-slide
+          (click)="openVideo(video.uri)"
+          *ngFor="let video of talkShowVideos$ | async"
+        >
           <div class="video">
-            <img src="{{video.pictures.sizes[4].link}}" class="video__thumbnail" />
+            <img
+              src="{{video.pictures.sizes[4].link}}"
+              class="video__thumbnail"
+            />
             <p class="video__title">{{ video.name }}</p>
           </div>
         </ion-slide>
@@ -99,9 +151,15 @@
     <div>
       <h4>News</h4>
       <ion-slides scrollbar="true" #sliderEl [options]="slideOpts">
-        <ion-slide (click)="openVideo(video.uri)" *ngFor="let video of newsVideos$ | async">
+        <ion-slide
+          (click)="openVideo(video.uri)"
+          *ngFor="let video of newsVideos$ | async"
+        >
           <div class="video">
-            <img src="{{video.pictures.sizes[4].link}}" class="video__thumbnail" />
+            <img
+              src="{{video.pictures.sizes[4].link}}"
+              class="video__thumbnail"
+            />
             <p class="video__title">{{ video.name }}</p>
           </div>
         </ion-slide>
@@ -112,9 +170,15 @@
   <div>
     <h4>Islamic</h4>
     <ion-slides scrollbar="true" #sliderEl [options]="slideOpts">
-      <ion-slide (click)="openVideo(video.uri)" *ngFor="let video of islamicVideos$ | async">
+      <ion-slide
+        (click)="openVideo(video.uri)"
+        *ngFor="let video of islamicVideos$ | async"
+      >
         <div class="video">
-          <img src="{{video.pictures.sizes[4].link}}" class="video__thumbnail" />
+          <img
+            src="{{video.pictures.sizes[4].link}}"
+            class="video__thumbnail"
+          />
           <p class="video__title">{{ video.name }}</p>
         </div>
       </ion-slide>

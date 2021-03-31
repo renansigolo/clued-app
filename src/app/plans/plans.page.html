@@ -4,8 +4,8 @@
       <ion-row class="ion-justify-content-center ion-padding-horizontal">
         <ion-col>
           <ion-img
-            class="position-logo-dark"
-            src="../assets/logo/logo-dark.svg"
+            class="position-logo-clued"
+            src="../assets/logo/logo-clued.svg"
             alt="logo"
           ></ion-img>
           <section>
@@ -28,9 +28,7 @@
                       <p class="text-plans-options">
                         {{ plan.title | titlecase }}
                       </p>
-                      <p class="text-price-options">
-                        ${{ plan.price }}
-                      </p>
+                      <p class="text-price-options">${{ plan.price }}</p>
                     </ion-col>
                     <ion-col size="9">
                       <ion-list>

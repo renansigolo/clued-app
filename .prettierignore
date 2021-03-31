@@ -1,3 +1,6 @@
+android
+capacitor.config.json
+ios
 package-lock.json
 package.json
 platforms

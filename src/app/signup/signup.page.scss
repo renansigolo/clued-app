@@ -27,7 +27,7 @@ ion-content {
   }
 
   ion-img {
-    margin-top: -50px;
+    margin-top: -13vh;
   }
 
   ion-input {
@@ -47,7 +47,9 @@ ion-content {
   }
 }
 
-.position-logo-dark {
-  height: 13vh;
+.position-logo {
+  height: 12vh;
   width: auto;
+  max-width: 180px;
+  margin-left: 20vw;
 }
