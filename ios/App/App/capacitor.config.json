@@ -1,5 +1,5 @@
 {
-  "appId": "clued.tv",
+  "appId": "tv.clued",
   "appName": "CluedTv",
   "bundledWebRuntime": false,
   "npmClient": "npm",
@@ -14,7 +14,6 @@
       "Orientation": "portrait",
       "ShowSplashScreenSpinner": "false",
       "ScrollEnabled": "false",
-      "android-minSdkVersion": "19",
       "BackupWebStorage": "none",
       "SplashMaintainAspectRatio": "true",
       "FadeSplashScreenDuration": "300",

@@ -42,6 +42,7 @@
         *ngFor="let plan of plans$ | async"
         (click)="confirmAction('upgrade', plan)"
         [ngStyle]="{'border': plan.title === user.subscription ? '1px solid var(--ion-color-primary)' : '1px solid var(--ion-color-light)'}"
+        [disabled]="plan.title === user.subscription"
       >
         <ion-card-header>
           <ion-row>

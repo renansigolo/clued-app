@@ -1,12 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core'
-import { Router } from '@angular/router'
-import { PopoverController, IonSlides } from '@ionic/angular'
+import { IonSlides, PopoverController } from '@ionic/angular'
 import { Observable } from 'rxjs'
 import { User } from '../model/user'
 import { ProfileComponent } from '../profile/profile.component'
 import { AuthService } from '../services/auth.service'
 import { VimeoService } from '../services/vimeo.service'
-import { DbService } from '../services/db.service'
 
 @Component({
   selector: 'app-home',
@@ -79,9 +77,7 @@ export class HomePage implements OnInit {
   constructor(
     public auth: AuthService,
     public popoverController: PopoverController,
-    public vimeo: VimeoService,
-    private db: DbService,
-    private router: Router
+    public vimeo: VimeoService
   ) {}
 
   ngOnInit() {

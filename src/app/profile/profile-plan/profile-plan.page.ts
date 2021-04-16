@@ -71,6 +71,9 @@ export class ProfilePlanPage implements OnInit {
         {
           text: 'Confirm',
           handler: async () => {
+            if (this.user.subscription !== 'basic') {
+              return this.notification.showToast('Downgrade not allowed, please contact support')
+            }
             if (action === 'cancel') {
               const subDetails = await this.stripeService
                 .getSubscription(this.user.uid)

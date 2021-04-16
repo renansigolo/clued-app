@@ -60,10 +60,26 @@ export class VimeoService {
   playVideo(videoId: number) {
     const player = new Player('vimeo-player', {
       id: videoId,
-      playsinline: true,
+      playsinline: false,
       width: 375,
     })
-    player.play()
+
+    player.ready().then(function() {
+      player.play()
+    });
+
+    player.on('fullscreenchange', (res: { fullscreen: boolean }) => {
+      if (!res.fullscreen) {
+        player.unload().then(function() {
+          console.log("🚀 ~ UNLOADED")
+          player.destroy()
+          // the video was unloaded
+        }).catch(function(error) {
+          // an error occurred
+          console.log("🚀 ~ file: vimeo.service.ts ~ line 73 ~ VimeoService ~ player.unload ~ error", error)
+        });
+      }
+    })
 
     player.on('ended', () => {
       player.destroy()
