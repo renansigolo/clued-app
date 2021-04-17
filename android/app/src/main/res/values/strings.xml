@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">CluedTv</string>
     <string name="title_activity_main">CluedTv</string>
-    <string name="package_name">clued.tv</string>
-    <string name="custom_url_scheme">clued.tv</string>
+    <string name="package_name">tv.clued</string>
+    <string name="custom_url_scheme">tv.clued</string>
 </resources>
