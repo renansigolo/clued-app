@@ -19,9 +19,9 @@ export class AppComponent {
     private storage: Storage,
     private notification: NotificationService
   ) {
-    this.initializeApp()
+    this.initializeApp() 
   }
-
+  
   initializeApp() {
     this.notification.presentLoading().then(() => {
       this.storage
@@ -37,6 +37,14 @@ export class AppComponent {
     })
 
     this.platform.ready().then(() => {
+      // Disable Back Button on Android devices
+      this.platform.backButton.subscribeWithPriority(9999, () => {
+        document.addEventListener('backbutton', function (event) {
+          event.preventDefault();
+          event.stopPropagation();
+        }, false);
+      });
+      
       this.statusBar.styleDefault()
       this.splashScreen.hide()
     })
