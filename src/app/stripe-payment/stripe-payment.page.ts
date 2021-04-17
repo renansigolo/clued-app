@@ -56,25 +56,30 @@ export class StripePaymentPage implements OnInit, AfterViewInit {
   }
 
   initStripe() {
+    // Init Elements
     this.stripe = Stripe(environment.stripe.key)
     const elements = this.stripe.elements()
-    const style = {
-      base: {
-        // color: '#fff',
-        lineHeight: '24px',
-        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-        fontSmoothing: 'antialiased',
-        fontSize: '16px',
-        '::placeholder': {
-          color: '#aab7c4',
+    
+    // Init Stripe Card
+    const cardOptions = {
+      hidePostalCode: true,
+      style: {
+        base: {
+          lineHeight: '24px',
+          fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+          fontSmoothing: 'antialiased',
+          fontSize: '16px',
+          '::placeholder': {
+            color: '#aab7c4',
+          },
         },
-      },
-      invalid: {
-        color: '#fa755a',
-        iconColor: '#fa755a',
-      },
+        invalid: {
+          color: '#fa755a',
+          iconColor: '#fa755a',
+        }
+      }
     }
-    this.card = elements.create('card', { style })
+    this.card = elements.create('card', cardOptions )
   }
 
   setupStripeElements() {
