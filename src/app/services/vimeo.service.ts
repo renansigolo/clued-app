@@ -64,20 +64,26 @@ export class VimeoService {
       width: 375,
     })
 
-    player.ready().then(function() {
+    player.ready().then(() => {
       player.play()
-    });
+    })
 
     player.on('fullscreenchange', (res: { fullscreen: boolean }) => {
       if (!res.fullscreen) {
-        player.unload().then(function() {
-          console.log("🚀 ~ UNLOADED")
-          player.destroy()
-          // the video was unloaded
-        }).catch(function(error) {
-          // an error occurred
-          console.log("🚀 ~ file: vimeo.service.ts ~ line 73 ~ VimeoService ~ player.unload ~ error", error)
-        });
+        player
+          .unload()
+          .then(() => {
+            console.log('🚀 ~ UNLOADED')
+            player.destroy()
+            // the video was unloaded
+          })
+          .catch((error) => {
+            // an error occurred
+            console.log(
+              '🚀 ~ file: vimeo.service.ts ~ line 73 ~ VimeoService ~ player.unload ~ error',
+              error
+            )
+          })
       }
     })
 
