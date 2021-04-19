@@ -1,12 +1,12 @@
 {
   "name": "clued-app",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "CluedTv App",
   "author": "8D Digital",
   "homepage": "https://8d.digital/",
   "private": true,
   "scripts": {
-    "clean": "rm -rf www node_modules platforms plugins package-lock.json .sourcemaps",
+    "clean": "rm -rf www node_modules platforms plugins package-lock.json",
     "clean:install": "npm run clean && npm i",
     "build": "ionic build && ionic cap sync",
     "build:web": "ionic build --prod",
