@@ -73,6 +73,7 @@
     "@ionic/angular-toolkit": "^2.2.0",
     "@types/node": "^12.12.39",
     "@types/stripe-v3": "^3.1.17",
+    "@types/vimeo__player": "^2.10.0",
     "codelyzer": "^5.2.2",
     "cordova-plugin-ionic-keyboard": "^2.2.0",
     "husky": "^4.2.5",
